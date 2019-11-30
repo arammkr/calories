@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Logs
+logs
+
+# Editors and IDEs
+.idea
+.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Misc
+.DS_Store
+my-ad_web.tar
+my-ad_storage.tar
+
+filelog-*.log
+.cache-loader
+uploads
+.env
+esdoc
+filelog-warn.log

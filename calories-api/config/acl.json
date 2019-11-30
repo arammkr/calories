@@ -1,0 +1,26 @@
+{
+  "acl": [
+    {
+      "resource": "/api/calories/auth",
+      "hasAccess": [
+        "admin",
+        "manager",
+        "user"
+      ]
+    },
+    {
+      "resource": "/api/calories/user",
+      "hasAccess": [
+        "admin",
+        "manager"
+      ]
+    },
+    {
+      "resource": "/api/calories/meal",
+      "hasAccess": [
+        "admin",
+        "user"
+      ]
+    }
+  ]
+}

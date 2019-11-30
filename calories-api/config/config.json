@@ -1,0 +1,14 @@
+{
+  "roles": ["admin", "manager", "user"],
+  "ROLE": {
+    "ADMIN": "admin",
+    "MANAGER": "manager",
+    "USER": "user"
+  },
+  "ROLE_WEIGHT": {
+    "user": 1,
+    "manager": 2,
+    "admin": 3
+  },
+  "MAX_ALLOWED_DATE_DIFF": 30
+}
