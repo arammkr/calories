@@ -1,0 +1,61 @@
+{
+  "name": "calories-api",
+  "version": "1.0.0",
+  "description": "Web API for calories api",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "npx nodemon app.js",
+    "start:prod": "node app.js",
+    "test": "jest --detectOpenHandles",
+    "db:clean": "node ./db/clean.js",
+    "db:migrate": "npx sequelize db:migrate",
+    "db:seed": "npx sequelize db:seed:all",
+    "db:fresh": "yarn db:clean && yarn db:migrate",
+    "lint": "eslint .",
+    "postinstall": "npx link-module-alias",
+    "preinstall": "command -v link-module-alias && link-module-alias clean || true"
+  },
+  "author": "Aramayis Mkrtchyan",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "bunyan": "^1.8.12",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "dayjs": "^1.8.11",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-useragent": "^1.0.12",
+    "express-winston": "^4.0.1",
+    "joi": "^14.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^1.6.4",
+    "nconf": "^0.10.0",
+    "sequelize": "^5.21.2",
+    "uuid": "^3.3.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.5",
+    "eslint": "5.1.0",
+    "faker": "^4.1.0",
+    "jest": "^23.6.0",
+    "link-module-alias": "^1.1.6",
+    "nodemon": "^1.18.7",
+    "prettier": "^1.13.7",
+    "sequelize-cli": "^5.5.1",
+    "sequelize-mock": "^0.10.2",
+    "supertest": "^3.3.0"
+  },
+  "_moduleAliases": {
+    "@services": "services",
+    "@models": "db/models",
+    "@config": "config",
+    "@db": "db",
+    "@utils": "utils",
+    "@http": "http"
+  }
+}

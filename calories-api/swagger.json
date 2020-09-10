@@ -1,0 +1,1028 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "calories",
+    "description": "TODO: Add Description",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:9090/api/calories",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "login",
+        "description": "TODO: Add Description",
+        "operationId": "login",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/loginrequest"
+              },
+              "example": {
+                "email": "albus@calories.com",
+                "password": "albus@1892"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "signup",
+        "description": "TODO: Add Description",
+        "operationId": "signup",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/signuprequest"
+              },
+              "example": {
+                "email": "armo.mkrtchyan1@gmail.com",
+                "password": "Aram@1992",
+                "nick": "i.am.rm1",
+                "firstName": "Aram",
+                "lastName": "Mkrtchyan"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/auth/me": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "me",
+        "description": "TODO: Add Description",
+        "operationId": "me",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "add",
+        "description": "TODO: Add Description",
+        "operationId": "add",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/addrequest"
+              },
+              "example": {
+                "email": "asdarmo.mkrtchd3asd123@gaiasl.com",
+                "password": "Aram@1992",
+                "nick": "i.a1m.rmsdas1aas",
+                "firstName": "Aram",
+                "lastName": "Mkrtchyan",
+                "role": "user",
+                "caloriesPerDay": 2599
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/{userId}": {
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "update",
+        "description": "TODO: Add Description",
+        "operationId": "update",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userId"
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updaterequest"
+              },
+              "example": {
+                "email": "t1a1sdet@dsd.com",
+                "password": "Araasdm@1992123",
+                "nick": "i.a1a1est",
+                "firstName": "Aram",
+                "lastName": "Mkrtchyan",
+                "role": "user",
+                "caloriesPerDay": 1233
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "get",
+        "description": "TODO: Add Description",
+        "operationId": "get",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/userId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "delete",
+        "description": "TODO: Add Description",
+        "operationId": "delete",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/userId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/search": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "search",
+        "description": "TODO: Add Description",
+        "operationId": "search",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Edi"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/{userId}/meals": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "user meals in range",
+        "description": "TODO: Add Description",
+        "operationId": "usermealsinrange",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "2019-10-30"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "2019-11-29"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/userId"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/{userId}/meals/nutritionAverage": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "user meal nutrition avg",
+        "description": "TODO: Add Description",
+        "operationId": "usermealnutritionavg",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/userId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/{userId}/meals/{date}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "user meal nutrition avg Copy",
+        "description": "TODO: Add Description",
+        "operationId": "usermealnutritionavgCopy",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/userId"
+          },
+          {
+            "$ref": "#/components/parameters/date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/all": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "get users",
+        "description": "TODO: Add Description",
+        "operationId": "getusers",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 3
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 10
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/meal": {
+      "post": {
+        "tags": [
+          "meal"
+        ],
+        "summary": "create",
+        "description": "TODO: Add Description",
+        "operationId": "create",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createrequest"
+              },
+              "example": {
+                "name": "apple",
+                "calories": 176,
+                "carbs": 2,
+                "fat": 0,
+                "protein": 1,
+                "date": "2019-11-22",
+                "time": "12:45",
+                "userId": 3
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/meal/{mealId}": {
+      "get": {
+        "tags": [
+          "meal"
+        ],
+        "summary": "get",
+        "description": "TODO: Add Description",
+        "operationId": "Getget",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/mealId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "meal"
+        ],
+        "summary": "update",
+        "description": "TODO: Add Description",
+        "operationId": "Putupdate",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/mealId"
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updaterequest1"
+              },
+              "example": {
+                "name": "qaq",
+                "calories": 176,
+                "carbs": 2,
+                "fat": 0,
+                "protein": 1,
+                "date": "2019-11-21",
+                "time": "12:45"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "meal"
+        ],
+        "summary": "delete",
+        "description": "TODO: Add Description",
+        "operationId": "Deletedelete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/mealId"
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/deleterequest"
+              },
+              "example": {
+                "name": "apple",
+                "calories": 176,
+                "carbs": 2,
+                "fat": 0,
+                "protein": 1,
+                "date": "2019-11-22",
+                "time": "12:45"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "loginrequest": {
+        "title": "loginrequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "albus@calories.com",
+          "password": "albus@1892"
+        }
+      },
+      "loginuserrequest": {
+        "title": "loginuserrequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "john@calories.com",
+          "password": "john@1992"
+        }
+      },
+      "loginmanagerrequest": {
+        "title": "loginmanagerrequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "harry@calories.com",
+          "password": "harry@1996"
+        }
+      },
+      "signuprequest": {
+        "title": "signuprequest",
+        "required": [
+          "email",
+          "password",
+          "nick",
+          "firstName",
+          "lastName"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "nick": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "armo.mkrtchyan1@gmail.com",
+          "password": "Aram@1992",
+          "nick": "i.am.rm1",
+          "firstName": "Aram",
+          "lastName": "Mkrtchyan"
+        }
+      },
+      "addrequest": {
+        "title": "addrequest",
+        "required": [
+          "email",
+          "password",
+          "nick",
+          "firstName",
+          "lastName",
+          "role",
+          "caloriesPerDay"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "nick": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "caloriesPerDay": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "email": "asdarmo.mkrtchd3asd123@gaiasl.com",
+          "password": "Aram@1992",
+          "nick": "i.a1m.rmsdas1aas",
+          "firstName": "Aram",
+          "lastName": "Mkrtchyan",
+          "role": "user",
+          "caloriesPerDay": 2599
+        }
+      },
+      "updaterequest": {
+        "title": "updaterequest",
+        "required": [
+          "email",
+          "password",
+          "nick",
+          "firstName",
+          "lastName",
+          "role",
+          "caloriesPerDay"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "nick": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "caloriesPerDay": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "email": "t1a1sdet@dsd.com",
+          "password": "Araasdm@1992123",
+          "nick": "i.a1a1est",
+          "firstName": "Aram",
+          "lastName": "Mkrtchyan",
+          "role": "user",
+          "caloriesPerDay": 1233
+        }
+      },
+      "createrequest": {
+        "title": "createrequest",
+        "required": [
+          "name",
+          "calories",
+          "carbs",
+          "fat",
+          "protein",
+          "date",
+          "time",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "calories": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "carbs": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "protein": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "name": "apple",
+          "calories": 176,
+          "carbs": 2,
+          "fat": 0,
+          "protein": 1,
+          "date": "2019-11-22",
+          "time": "12:45",
+          "userId": 3
+        }
+      },
+      "updaterequest1": {
+        "title": "updaterequest1",
+        "required": [
+          "name",
+          "calories",
+          "carbs",
+          "fat",
+          "protein",
+          "date",
+          "time"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "calories": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "carbs": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "protein": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "qaq",
+          "calories": 176,
+          "carbs": 2,
+          "fat": 0,
+          "protein": 1,
+          "date": "2019-11-21",
+          "time": "12:45"
+        }
+      },
+      "deleterequest": {
+        "title": "deleterequest",
+        "required": [
+          "name",
+          "calories",
+          "carbs",
+          "fat",
+          "protein",
+          "date",
+          "time"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "calories": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "carbs": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "protein": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "apple",
+          "calories": 176,
+          "carbs": 2,
+          "fat": 0,
+          "protein": 1,
+          "date": "2019-11-22",
+          "time": "12:45"
+        }
+      }
+    },
+    "securitySchemes": {
+      "httpBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "parameters": {
+      "userId": {
+        "in": "path",
+        "name": "userId",
+        "schema": {
+          "type": "integer"
+        },
+        "required": true,
+        "description": "Numeric ID of the user"
+      },
+      "date": {
+        "in": "path",
+        "name": "date",
+        "schema": {
+          "type": "date"
+        },
+        "required": true,
+        "description": "date in format YYYY-MM-DD"
+      },
+      "mealId": {
+        "in": "path",
+        "name": "mealId",
+        "schema": {
+          "type": "integer"
+        },
+        "required": true,
+        "description": "Numeric ID of the meal"
+      },
+      "page": {
+        "name": "page",
+        "description": "Page number which starts from 0",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "default": 0
+        },
+        "required": false
+      },
+      "size": {
+        "name": "size",
+        "description": "Count of elements per page of pagination",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "default": 20,
+          "maximum": 100,
+          "minimum": 10
+        },
+        "required": false
+      }
+    }
+  },
+  "security": [
+    {
+      "httpBearer": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "auth"
+    },
+    {
+      "name": "user"
+    },
+    {
+      "name": "meal"
+    }
+  ]
+}
